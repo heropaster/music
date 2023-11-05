@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { FilterDropdown } from "./FilterDropdown/FilterDropdown";
-import "./FilterItem.scss";
-
+import * as S from "./styles.ts";
 interface FilterItemProps {
 	text: string;
 	title: string;
@@ -17,14 +16,14 @@ export const FilterItem: React.FC<FilterItemProps> = ({
 	options,
 }) => {
 	return (
-		<div className={`filter__item ${isOpen ? "active" : ""}`}>
-			<div
-				className="filter__button _btn-text"
+		<S.FilterItem>
+			<S.FilterButton
+				$active={isOpen ? "acitve" : ""}
 				onClick={() => onFilterClick(title)}
 			>
 				{text}
-			</div>
+			</S.FilterButton>
 			{isOpen && <FilterDropdown options={options} />}
-		</div>
+		</S.FilterItem>
 	);
 };

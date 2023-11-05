@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import * as S from "./styles.js";
 import { FilterItem } from "./FilterItem/FilterItem";
-import "./Filter.scss";
 const options = {
 	performer: [
 		"Nero",
@@ -39,8 +39,8 @@ export const Filter = () => {
 	};
 
 	return (
-		<div className="centerblock__filter filter">
-			<div className="filter__title">Искать по:</div>
+		<S.Filter>
+			<S.FilterTitle>Искать по:</S.FilterTitle>
 			<FilterItem
 				text="исполнителю"
 				title="performer"
@@ -62,6 +62,6 @@ export const Filter = () => {
 				onFilterClick={handleFilterClick}
 				options={options.genre}
 			/>
-		</div>
+		</S.Filter>
 	);
 };

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import "./CurrentTrack.scss";
+import * as S from "./styles.js";
+
 export const CurrentTrack = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -10,9 +11,9 @@ export const CurrentTrack = () => {
 		return () => clearInterval(interval);
 	}, []);
 	return (
-		<div className="player__track-play track-play">
-			<div className="track-play__contain">
-				<div className="track-play__image">
+		<S.PlayerTrack>
+			<S.PlayerTrack__contain>
+				<S.PlayerTrack__image>
 					{isLoading ? (
 						<Skeleton
 							width={"51px"}
@@ -21,11 +22,11 @@ export const CurrentTrack = () => {
 							highlightColor="#444"
 						/>
 					) : (
-						<svg className="track-play__svg">
+						<S.PlayerTrack__svg>
 							<use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-						</svg>
+						</S.PlayerTrack__svg>
 					)}
-				</div>
+				</S.PlayerTrack__image>
 				{isLoading ? (
 					<Skeleton
 						count={2}
@@ -35,32 +36,32 @@ export const CurrentTrack = () => {
 					/>
 				) : (
 					<>
-						<div className="track-play__author">
-							<a className="track-play__author-link" href="http://">
+						<S.PlayerTrack__author>
+							<S.PlayerTrack__author__link>
 								Ты та...
-							</a>
-						</div>
-						<div className="track-play__album">
-							<a className="track-play__album-link" href="http://">
+							</S.PlayerTrack__author__link>
+						</S.PlayerTrack__author>
+						<S.PlayerTrack__album>
+							<S.PlayerTrack__album__link href="http://">
 								Баста
-							</a>
-						</div>
+							</S.PlayerTrack__album__link>
+						</S.PlayerTrack__album>
 					</>
 				)}
-			</div>
+			</S.PlayerTrack__contain>
 
-			<div className="track-play__like-dis">
-				<div className="track-play__like _btn-icon">
-					<svg className="track-play__like-svg">
+			<S.PlayerTrack__likeDislike>
+				<S.PlayerTrack__likeDislike_icon>
+					<S.PlayerTrack__likeSvg>
 						<use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-					</svg>
-				</div>
-				<div className="track-play__dislike _btn-icon">
-					<svg className="track-play__dislike-svg">
+					</S.PlayerTrack__likeSvg>
+				</S.PlayerTrack__likeDislike_icon>
+				<S.PlayerTrack__dislike>
+					<S.PlayerTrack__dislikeSvg className="track-play__dislike-svg">
 						<use xlinkHref="img/icon/sprite.svg#icon-dislike"></use>
-					</svg>
-				</div>
-			</div>
-		</div>
+					</S.PlayerTrack__dislikeSvg>
+				</S.PlayerTrack__dislike>
+			</S.PlayerTrack__likeDislike>
+		</S.PlayerTrack>
 	);
 };

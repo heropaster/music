@@ -1,7 +1,6 @@
-import React from "react";
-
-import "./Playlist.scss";
+import * as S from "./styles.js";
 import { Track } from "./Track/Track";
+
 export const Playlist = () => {
 	const trackList = [
 		{
@@ -117,7 +116,7 @@ export const Playlist = () => {
 		},
 	];
 	return (
-		<div className="content__playlist playlist">
+		<S.Playlist className="content__playlist playlist">
 			{trackList.map((track, index) => (
 				<Track
 					key={index}
@@ -128,6 +127,6 @@ export const Playlist = () => {
 					additional={track?.additional}
 				/>
 			))}
-		</div>
+		</S.Playlist>
 	);
 };

@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 * {
 	margin: 0;
 	padding: 0;
@@ -44,25 +47,4 @@ body {
 	color: #ffffff;
 }
 
-.wrapper {
-	width: 100%;
-	min-height: 100%;
-	overflow: hidden;
-	background-color: #383838;
-}
-.col01 {
-	width: 447px;
-}
-
-.col02 {
-	width: 321px;
-}
-
-.col03 {
-	width: 245px;
-}
-
-.col04 {
-	width: 60px;
-	text-align: end;
-}
+`;
