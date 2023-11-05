@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import "./Track.scss";
 interface TrackProps {
 	title: string;
@@ -15,7 +16,22 @@ export const Track: React.FC<TrackProps> = ({
 	duration,
 	additional,
 }) => {
-	return (
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const interval = setInterval(() => setIsLoading(false), 5000);
+		return () => clearInterval(interval);
+	}, []);
+	return isLoading ? (
+		<Skeleton
+			baseColor="#202020"
+			highlightColor="#444"
+			height={"51px"}
+			style={{
+				marginBottom: "12px",
+			}}
+		/>
+	) : (
 		<div className="playlist__item">
 			<div className="playlist__track track">
 				<div className="track__title">

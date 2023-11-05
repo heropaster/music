@@ -14,8 +14,9 @@
 	border: 1px solid #ffffff;
 	border-radius: 60px;
 	padding: 6px 20px;
+	transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.filter__button:not(:last-child) {
+.filter__item:not(:last-child) {
 	margin-right: 10px;
 }
