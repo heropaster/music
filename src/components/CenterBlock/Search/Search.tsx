@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as S from "./styles.js";
+import "./Search.scss";
 
 export const Search = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -13,11 +13,16 @@ export const Search = () => {
 	return isLoading ? (
 		<Skeleton baseColor="#202020" highlightColor="#444" height={"52px"} />
 	) : (
-		<S.Search className="centerblock__search search">
-			<S.SearchSvg className="search__svg">
+		<div className="centerblock__search search">
+			<svg className="search__svg">
 				<use xlinkHref="img/icon/sprite.svg#icon-search"></use>
-			</S.SearchSvg>
-			<S.SearchText type="search" placeholder="Поиск" name="search" />
-		</S.Search>
+			</svg>
+			<input
+				className="search__text"
+				type="search"
+				placeholder="Поиск"
+				name="search"
+			/>
+		</div>
 	);
 };

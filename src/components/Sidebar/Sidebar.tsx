@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as S from "./styles.js";
+import "./Sidebar.scss";
 
 export const Sidebar = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -11,18 +11,18 @@ export const Sidebar = () => {
 		return () => clearInterval(interval);
 	}, []);
 	return (
-		<S.Sidebar>
-			<S.Personal>
-				<S.PersonalName>Sergey.Ivanov</S.PersonalName>
-				<S.SidebarIcon>
+		<div className="main__sidebar sidebar">
+			<div className="sidebar__personal">
+				<p className="sidebar__personal-name">Sergey.Ivanov</p>
+				<div className="sidebar__icon">
 					<svg>
 						<use xlinkHref="img/icon/sprite.svg#logout"></use>
 					</svg>
-				</S.SidebarIcon>
-			</S.Personal>
-			<S.SidebarBlock>
-				<S.List>
-					<S.ListItem>
+				</div>
+			</div>
+			<div className="sidebar__block">
+				<div className="sidebar__list">
+					<div className="sidebar__item">
 						{isLoading ? (
 							<Skeleton
 								width="250px"
@@ -31,15 +31,16 @@ export const Sidebar = () => {
 								highlightColor="#444"
 							/>
 						) : (
-							<S.SidebarLink href="#1">
-								<S.SidebarImg
+							<a className="sidebar__link" href="#1">
+								<img
+									className="sidebar__img"
 									src="../img/playlist01.png"
 									alt="day's playlist"
 								/>
-							</S.SidebarLink>
+							</a>
 						)}
-					</S.ListItem>
-					<S.ListItem>
+					</div>
+					<div className="sidebar__item">
 						{isLoading ? (
 							<Skeleton
 								width="250px"
@@ -48,15 +49,16 @@ export const Sidebar = () => {
 								highlightColor="#444"
 							/>
 						) : (
-							<S.SidebarLink href="#1">
-								<S.SidebarImg
+							<a className="sidebar__link" href="#1">
+								<img
+									className="sidebar__img"
 									src="../img/playlist02.png"
 									alt="day's playlist"
 								/>
-							</S.SidebarLink>
+							</a>
 						)}
-					</S.ListItem>
-					<S.ListItem>
+					</div>
+					<div className="sidebar__item">
 						{isLoading ? (
 							<Skeleton
 								width="250px"
@@ -65,16 +67,17 @@ export const Sidebar = () => {
 								highlightColor="#444"
 							/>
 						) : (
-							<S.SidebarLink href="#1">
-								<S.SidebarImg
+							<a className="sidebar__link" href="#1">
+								<img
+									className="sidebar__img"
 									src="../img/playlist03.png"
 									alt="day's playlist"
 								/>
-							</S.SidebarLink>
+							</a>
 						)}
-					</S.ListItem>
-				</S.List>
-			</S.SidebarBlock>
-		</S.Sidebar>
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as S from "./styles.js";
-
+import "./Track.scss";
 interface TrackProps {
 	title: string;
 	author: string;
@@ -33,33 +32,37 @@ export const Track: React.FC<TrackProps> = ({
 			}}
 		/>
 	) : (
-		<S.Item>
-			<S.Track>
-				<S.Track__title>
-					<S.Track__image>
-						<S.Track__svg>
+		<div className="playlist__item">
+			<div className="playlist__track track">
+				<div className="track__title">
+					<div className="track__title-image">
+						<svg className="track__title-svg">
 							<use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-						</S.Track__svg>
-					</S.Track__image>
-					<div>
-						<S.Track__link href="http://">
-							{title} <S.Track__title__span>{additional}</S.Track__title__span>
-						</S.Track__link>
+						</svg>
 					</div>
-				</S.Track__title>
-				<S.Author>
-					<S.Author__link href="http://">{author}</S.Author__link>
-				</S.Author>
-				<S.Album>
-					<S.Album__link href="http://">{album}</S.Album__link>
-				</S.Album>
-				<div>
-					<S.TimeSvg>
-						<use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-					</S.TimeSvg>
-					<S.TimeText>{duration}</S.TimeText>
+					<div className="track__title-text">
+						<a className="track__title-link" href="http://">
+							{title} <span className="track__title-span">{additional}</span>
+						</a>
+					</div>
 				</div>
-			</S.Track>
-		</S.Item>
+				<div className="track__author">
+					<a className="track__author-link" href="http://">
+						{author}
+					</a>
+				</div>
+				<div className="track__album">
+					<a className="track__album-link" href="http://">
+						{album}
+					</a>
+				</div>
+				<div className="track__time">
+					<svg className="track__time-svg">
+						<use xlinkHref="img/icon/sprite.svg#icon-like"></use>
+					</svg>
+					<span className="track__time-text">{duration}</span>
+				</div>
+			</div>
+		</div>
 	);
 };

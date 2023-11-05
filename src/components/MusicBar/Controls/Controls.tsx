@@ -1,32 +1,33 @@
-import * as S from "./styles.js";
+import React from "react";
+import "./Controls.scss";
 export const Controls = () => {
 	return (
-		<S.Controls>
-			<S.Prev>
-				<S.PrevSvg>
+		<div className="player__controls">
+			<div className="player__btn-prev">
+				<svg className="player__btn-prev-svg">
 					<use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
-				</S.PrevSvg>
-			</S.Prev>
-			<S.Play>
-				<S.PlaySvg>
+				</svg>
+			</div>
+			<div className="player__btn-play _btn">
+				<svg className="player__btn-play-svg">
 					<use xlinkHref="img/icon/sprite.svg#icon-play"></use>
-				</S.PlaySvg>
-			</S.Play>
-			<S.Next>
-				<S.NextSvg>
+				</svg>
+			</div>
+			<div className="player__btn-next">
+				<svg className="player__btn-next-svg">
 					<use xlinkHref="img/icon/sprite.svg#icon-next"></use>
-				</S.NextSvg>
-			</S.Next>
-			<S.Repeat>
-				<S.RepeatSvg>
+				</svg>
+			</div>
+			<div className="player__btn-repeat _btn-icon">
+				<svg className="player__btn-repeat-svg">
 					<use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
-				</S.RepeatSvg>
-			</S.Repeat>
-			<S.Shuffle>
-				<S.ShuffleSvg>
+				</svg>
+			</div>
+			<div className="player__btn-shuffle _btn-icon">
+				<svg className="player__btn-shuffle-svg">
 					<use xlinkHref="img/icon/sprite.svg#icon-shuffle"></use>
-				</S.ShuffleSvg>
-			</S.Shuffle>
-		</S.Controls>
+				</svg>
+			</div>
+		</div>
 	);
 };

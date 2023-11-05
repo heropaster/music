@@ -1,18 +1,17 @@
 import React from "react";
 
-import * as S from "./styles.js";
-
+import "./FilterDropdown.scss";
 interface FilterDropdownProps {
 	options: string[];
 }
 export const FilterDropdown: React.FC<FilterDropdownProps> = ({ options }) => {
 	return (
-		<S.Dropdown className="dropdown">
-			<S.List className="dropdown__list">
-				{options.map((item) => (
-					<S.ListItem>{item}</S.ListItem>
-				))}
-			</S.List>
-		</S.Dropdown>
+		<div className="dropdown">
+			<div className="dropdown__list">
+                {options.map((item) => (
+                    <span>{item}</span>
+                ))}
+            </div>
+		</div>
 	);
 };

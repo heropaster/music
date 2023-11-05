@@ -1,10 +1,4 @@
-import styled from "styled-components";
-
-export const Sidebar = styled.div`
-	max-width: 418px;
-	padding: 20px 90px 20px 78px;
-`;
-export const Personal = styled.div`
+.sidebar__personal {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -19,23 +13,26 @@ export const Personal = styled.div`
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 	padding: 12px 0 15px 0;
-`;
-export const PersonalName = styled.p`
+}
+
+.sidebar__personal-name {
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
 	color: #ffffff;
 	margin-right: 16px;
-`;
-export const SidebarIcon = styled.div`
+}
+
+.sidebar__icon {
 	width: 43px;
 	height: 43px;
 	background-color: #313131;
 	border-radius: 50%;
 	cursor: pointer;
-`;
-export const SidebarBlock = styled.div`
+}
+
+.sidebar__block {
 	height: 100%;
 	padding: 240px 0 0 0;
 	display: -webkit-box;
@@ -48,8 +45,9 @@ export const SidebarBlock = styled.div`
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
-`;
-export const List = styled.div`
+}
+
+.sidebar__list {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -60,19 +58,23 @@ export const List = styled.div`
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-`;
-export const ListItem = styled.div`
+}
+
+.sidebar__item {
 	width: 250px;
 	height: 150px;
-	:not(:last-child) {
-		margin-bottom: 30px;
-	}
-`;
-export const SidebarLink = styled.a`
+}
+
+.sidebar__item:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+.sidebar__link {
 	width: 100%;
 	height: 100%;
-`;
-export const SidebarImg = styled.img`
+}
+
+.sidebar__img {
 	width: 100%;
 	height: auto;
-`;
+}

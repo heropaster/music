@@ -1,20 +1,21 @@
+import React from "react";
+import "./MusicBar.scss";
 import { Controls } from "./Controls/Controls";
 import { CurrentTrack } from "./CurrentTrack/CurrentTrack";
 import { Volume } from "./Volume/Volume";
-import * as S from "./styles.js";
 export const MusicBar = () => {
 	return (
-		<S.Bar>
-			<S.Bar__content>
-				<S.Bar__progress />
-				<S.Bar__playerContainer>
-					<S.Bar__player>
+		<div className="bar">
+			<div className="bar__content">
+				<div className="bar__player-progress"></div>
+				<div className="bar__player-block">
+					<div className="bar__player player">
 						<Controls />
 						<CurrentTrack />
-					</S.Bar__player>
+					</div>
 					<Volume />
-				</S.Bar__playerContainer>
-			</S.Bar__content>
-		</S.Bar>
+				</div>
+			</div>
+		</div>
 	);
 };
