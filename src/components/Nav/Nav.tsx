@@ -1,42 +1,34 @@
 import React, { useState } from "react";
-import "./Nav.scss";
+import * as S from "./styles.ts";
+
 export const Nav = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const handleClick = () => {
 		setIsOpen(!isOpen);
 	};
 	return (
-		<nav className="main__nav nav">
-			<div className="nav__logo logo">
-				<img className="logo__image" src="img/logo.png" alt="logo" />
-			</div>
-			<div
-				className={`nav__burger burger ${isOpen ? "active" : ""}`}
-				onClick={handleClick}
-			>
-				<span className="burger__line burger__line--first"></span>
-				<span className="burger__line burger__line--second"></span>
-				<span className="burger__line burger__line--third"></span>
-			</div>
-			<div className="nav__menu menu">
-				<ul className={`menu__list ${isOpen ? "opened" : ""}`}>
-					<li className="menu__item">
-						<a href="#1" className="menu__link">
-							Главное
-						</a>
-					</li>
-					<li className="menu__item">
-						<a href="#1" className="menu__link">
-							Мой плейлист
-						</a>
-					</li>
-					<li className="menu__item">
-						<a href="../signin.html" className="menu__link">
-							Войти
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		<S.Nav>
+			<S.Logo>
+				<S.LogoImage src="img/logo.png" alt="logo" />
+			</S.Logo>
+			<S.Burger className={`${isOpen ? "active" : ""}`} onClick={handleClick}>
+				<S.Line__first $active={`${isOpen ? "active" : ""}`}></S.Line__first>
+				<S.Line__second $active={`${isOpen ? "active" : ""}`}></S.Line__second>
+				<S.Line__third $active={`${isOpen ? "active" : ""}`}></S.Line__third>
+			</S.Burger>
+			<S.Menu>
+				<S.Menu__list className={`${isOpen ? "opened" : ""}`}>
+					<S.Menu__item>
+						<S.Menu__link href="#1">Главное</S.Menu__link>
+					</S.Menu__item>
+					<S.Menu__item>
+						<S.Menu__link href="#1">Мой плейлист</S.Menu__link>
+					</S.Menu__item>
+					<S.Menu__item>
+						<S.Menu__link href="../signin.html">Войти</S.Menu__link>
+					</S.Menu__item>
+				</S.Menu__list>
+			</S.Menu>
+		</S.Nav>
 	);
 };

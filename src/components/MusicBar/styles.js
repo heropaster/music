@@ -1,13 +1,14 @@
-.bar {
+import styled from "styled-components";
+
+export const Bar = styled.div`
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	background: rgba(28, 28, 28, 0.5);
 	z-index: 10;
-}
-
-.bar__content {
+`;
+export const Bar__content = styled.div`
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -15,15 +16,13 @@
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-}
-
-.bar__player-progress {
+`;
+export const Bar__progress = styled.div`
 	width: 100%;
 	height: 5px;
 	background: #2e2e2e;
-}
-
-.bar__player-block {
+`;
+export const Bar__playerContainer = styled.div`
 	height: 73px;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -35,9 +34,8 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-}
-
-.bar__player {
+`;
+export const Bar__player = styled.div`
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -51,15 +49,4 @@
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
-}
-
-.bar__volume-block {
-	width: auto;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	padding: 0 92px 0 0;
-}
+`;
