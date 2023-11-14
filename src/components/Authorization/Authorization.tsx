@@ -58,12 +58,12 @@ export const Authorization: React.FC<AuthorizationProps> = ({type}) => {
                            callback={handleChangeConfirmPass}/>}
             <S.Buttons>
                 {type === 'register' ?
-                    <Button callback={handleConfirm} type={'primary'}>Зарегестрироваться</Button> :
+                    <Button callback={handleConfirm} type={'primary'}>Зарегистрироваться</Button> :
                     (<>
                         <Button
                             callback={handleConfirm}
                             type={'primary'}>Войти</Button>
-                        <Button callback={() => history('/register')}>Зарегестрироваться</Button>
+                        <Button callback={() => history('/register')}>Зарегистрироваться</Button>
                     </>)}
 
             </S.Buttons>

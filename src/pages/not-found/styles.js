@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  top: 0;
+  left: 0;
+  width: 100vw;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,5 +22,14 @@ export const Subtitle = styled.h2`
   line-height: 40px;
   font-weight: 400;
   color: #fff;
-  
+  display: flex;
+  align-items: center;
+  margin-bottom: 19px;
+`
+export const Description = styled.p`
+  font-size: 18px;
+  color: #4e4e4e;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 36px;
 `
