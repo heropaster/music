@@ -1,17 +1,17 @@
-import { GlobalStyle } from "./globalStyles.js";
-import * as S from "./pages/main/style.js";
-import { Nav } from "./components/Nav/Nav";
-import { CenterBlock } from "./components/CenterBlock/CenterBlock";
-import { Sidebar } from "./components/Sidebar/Sidebar";
-import { MusicBar } from "./components/MusicBar/MusicBar";
-import { AppRoutes } from "./routes";
+import {GlobalStyle} from "./globalStyles.js";
+import {AppRoutes} from "./routes";
+import {QueryClientProvider} from "@tanstack/react-query";
+import queryClient from "./services/queryClient";
+
 function App() {
-	return (
-		<>
-			<AppRoutes />
-			<GlobalStyle />
-		</>
-	);
+    return (
+        <>
+            <QueryClientProvider client={queryClient}>
+                <AppRoutes/>
+                <GlobalStyle/>
+            </QueryClientProvider>
+        </>
+    );
 }
 
 export default App;

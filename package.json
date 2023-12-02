@@ -3,16 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
+    "@tanstack/react-query": "^5.8.7",
     "@types/node": "^16.18.59",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
+    "axios": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.10",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "zustand": "^4.4.6"
   },
   "scripts": {
     "start": "react-scripts start",
