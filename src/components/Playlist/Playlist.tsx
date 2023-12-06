@@ -11,7 +11,6 @@ interface PlaylistProps {
 
 export const Playlist: React.FC<PlaylistProps> = ({type}) => {
     const {data: playlist, isPending: isLoading, isSuccess} = useGetTracksAll()
-    console.log(isLoading)
 
     const smallList = playlist?.data.slice(0, 5)
     return (
