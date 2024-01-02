@@ -1,17 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as S from "./styles.js";
 import {useNavigate} from "react-router-dom";
+import {useDataStore} from "../../store";
+import * as S from "./styles.js";
 
 export const Sidebar = () => {
     const history = useNavigate()
-    const [isLoading, setIsLoading] = useState(true);
+    const [isPending] = useDataStore((set) => [set.isPending])
 
-    useEffect(() => {
-        const interval = setInterval(() => setIsLoading(false), 5000);
-        return () => clearInterval(interval);
-    }, []);
     const handleRedirect = (id: string) => {
         history(`/category/${id}`)
     }
@@ -32,7 +29,7 @@ export const Sidebar = () => {
             <S.SidebarBlock>
                 <S.List>
                     <S.ListItem>
-                        {isLoading ? (
+                        {isPending ? (
                             <Skeleton
                                 width="250px"
                                 height="150px"
@@ -49,7 +46,7 @@ export const Sidebar = () => {
                         )}
                     </S.ListItem>
                     <S.ListItem>
-                        {isLoading ? (
+                        {isPending ? (
                             <Skeleton
                                 width="250px"
                                 height="150px"
@@ -66,7 +63,7 @@ export const Sidebar = () => {
                         )}
                     </S.ListItem>
                     <S.ListItem>
-                        {isLoading ? (
+                        {isPending ? (
                             <Skeleton
                                 width="250px"
                                 height="150px"
