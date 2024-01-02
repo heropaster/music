@@ -16,12 +16,26 @@ export const Bar__content = styled.div`
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  position: relative;
 `;
 export const Bar__progress = styled.div`
   width: 100%;
   height: 5px;
   background: #2e2e2e;
 `;
+export const Progress_thumb = styled.div`
+  height: 5px;
+  background: rgba(182, 114, 255, 1);
+  width: 0;
+`
+export const TimeDisplay = styled.div`
+  position: absolute;
+  top: -30px;
+  right: 0;
+  padding: 5px;
+  //background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+`
 export const Bar__playerContainer = styled.div`
   height: 73px;
   display: -webkit-box;

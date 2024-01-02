@@ -1,8 +1,9 @@
-import * as S from "./styles.js";
+import React, {useEffect} from "react";
 import {TrackItem} from "./Track/Track";
-import {useGetTracksAll} from "../../hooks/useGetTracksAll";
-import React, {useState} from "react";
 import Skeleton from "react-loading-skeleton";
+import {useDataStore} from "../../store";
+import {useGetTracksAll} from "../../hooks/useGetTracksAll";
+import * as S from "./styles.js";
 
 
 interface PlaylistProps {
@@ -11,8 +12,10 @@ interface PlaylistProps {
 
 export const Playlist: React.FC<PlaylistProps> = ({type}) => {
     const {data: playlist, isPending: isLoading, isSuccess} = useGetTracksAll()
-    console.log(isLoading)
-
+    const [changeIsPending] = useDataStore((set) => [set.changeIsPending])
+    useEffect(() => {
+        changeIsPending(isLoading)
+    }, [isLoading]);
     const smallList = playlist?.data.slice(0, 5)
     return (
         <S.Playlist className="content__playlist playlist">
@@ -23,7 +26,7 @@ export const Playlist: React.FC<PlaylistProps> = ({type}) => {
                 style={{
                     marginBottom: "12px",
                 }}
-            /> : isSuccess ? (type === 'small' ? smallList?.map((track, index) => (
+            /> : isSuccess ? (type === 'small' ? smallList?.map((track) => (
                 <TrackItem
                     key={track.id}
                     track={track}
